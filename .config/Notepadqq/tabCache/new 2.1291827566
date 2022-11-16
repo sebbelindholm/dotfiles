@@ -1,0 +1,1 @@
+rofi -show p -modi p:rofi-power-menu -theme ~/.config/rofi/main.rasi 

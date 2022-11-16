@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Notepadqq/>
+<Notepadqq>
+    <View>
+        <Tab filePath="/home/sebastian/.config/i3/config" cacheFilePath="" scrollX="0" scrollY="1170" language="plaintext" lastModified="1668526720310"/>
+        <Tab filePath="/home/sebastian/.config/alacritty/alacritty.yml" cacheFilePath="" scrollX="0" scrollY="1372" language="yaml" lastModified="1668512842376"/>
+        <Tab filePath="/home/sebastian/.bashrc" cacheFilePath="" scrollX="0" scrollY="0" language="plaintext" lastModified="1668526699637"/>
+        <Tab filePath="/home/sebastian/.config/rofi/main.rasi" cacheFilePath="" scrollX="0" scrollY="0" language="plaintext" lastModified="1668513704765"/>
+        <Tab filePath="/home/sebastian/.config/picom/picom.conf" cacheFilePath="" scrollX="0" scrollY="1040" language="plaintext" lastModified="1668523773316"/>
+        <Tab filePath="/home/sebastian/.config/dunst/dunstrc" cacheFilePath="" scrollX="0" scrollY="0" language="plaintext" lastModified="1668514714008"/>
+        <Tab filePath="" cacheFilePath="/home/sebastian/.config/Notepadqq/tabCache/new 2.1291827566" scrollX="0" scrollY="0" language="plaintext" active="1"/>
+    </View>
+</Notepadqq>
