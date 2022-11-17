@@ -1,3 +1,4 @@
+
 set nocompatible
 filetype on
 filetype plugin on

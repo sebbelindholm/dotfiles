@@ -1,6 +1,17 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#   /$$$$$$  /$$        /$$$$$$ 
+#  /$$__  $$| $$       /$$__  $$
+# | $$  \__/| $$      | $$  \__/
+# |  $$$$$$ | $$      | $$ /$$$$
+#  \____  $$| $$      | $$|_  $$
+#  /$$  \ $$| $$      | $$  \ $$
+# |  $$$$$$/| $$$$$$$$|  $$$$$$/
+#  \______/ |________/ \______/ 
+
+# Sebastian Lindholm Gustafsson zsh config file.
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 

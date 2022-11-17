@@ -1,5 +1,16 @@
 #!/bin/bash
 
+#   /$$$$$$  /$$        /$$$$$$ 
+#  /$$__  $$| $$       /$$__  $$
+# | $$  \__/| $$      | $$  \__/
+# |  $$$$$$ | $$      | $$ /$$$$
+#  \____  $$| $$      | $$|_  $$
+#  /$$  \ $$| $$      | $$  \ $$
+# |  $$$$$$/| $$$$$$$$|  $$$$$$/
+#  \______/ |________/ \______/ 
+
+# Sebastian Lindholm Gustafsson polybar launchfile.
+
 # Terminate already running bar instances
 killall -q polybar
 
