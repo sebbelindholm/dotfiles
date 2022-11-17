@@ -153,8 +153,12 @@ bindsym $mod+r mode "resize"
 
 #i3-gaps settings
 default_border pixel 3
-gaps inner 35
-gaps outer 10
+#gaps inner 35
+#gaps outer 10
+
+gaps inner 30
+gaps top -20
+
 
 # class                 border  bground text    indicator child_border
 client.focused          #E06C75 #E06C75 #FFFFFF #2E9EF4   #E06C75
