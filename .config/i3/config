@@ -38,7 +38,7 @@ exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id dunst
-
+exec_always --no-startup-id blueman-applet
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -49,6 +49,8 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec $term
 
+#Start emacs
+bindsym $mod+Shift+Return exec /usr/bin/emacsclient -c
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -99,8 +101,8 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
+#focus the child container
+bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -169,12 +171,15 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #FFFFFF
 
+for_window [instance="origin.exe"] floating enable
+
 
 #Personal keybindings
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+d exec "rofi -show drun -no-default-config -config ~/.config/rofi/main.rasi"
+bindsym $mod+Shift+d exec "rofi -show drun -no-default-config -config ~/.config/rofi/main.rasi"
 bindsym $mod+p exec "rofi -show p -modi p:rofi-power-menu   -theme ~/.config/rofi/main.rasi"
-
+bindsym $mod+Shift+s exec gnome-screenshot -i
+#bindsym $mod+Shift+h exec "dunstctl history"
 

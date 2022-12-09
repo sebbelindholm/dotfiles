@@ -32,6 +32,9 @@ CASE_SENSITIVE="true"
 
 #Alias
 alias config="/usr/bin/git --git-dir=/home/sebastian/.cfg/ --work-tree=/home/sebastian"
+alias ls='exa -al --color=always --group-directories-first'
+alias cl='clear'
+alias vim='nvim'
 
 #Star Ship
 eval "$(starship init zsh)"
