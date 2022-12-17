@@ -33,6 +33,7 @@ font pango:UbuntuMono 10
 
 #Autostart
 exec --no-startup-id dex --autostart --environment i3
+exec "setxkbmap -layout se" 
 exec_always --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
