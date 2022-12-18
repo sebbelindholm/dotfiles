@@ -3,6 +3,7 @@ alsa_card.pci-0000_01_00.1:output:hdmi-output-1:channelMap=FL;FR;
 alsa_card.pci-0000_01_00.1:output:hdmi-output-1:channelVolumes=0.125;0.125;
 alsa_card.pci-0000_01_00.1:output:hdmi-output-1:iec958Codecs=
 alsa_card.pci-0000_01_00.1:output:hdmi-output-1:latencyOffsetNsec=0
+alsa_card.pci-0000_01_00.1:profile:off=hdmi-output-1;
 alsa_card.pci-0000_01_00.1:profile:output:hdmi-stereo-extra1=hdmi-output-1;
 alsa_card.usb-Blue_Microphones_Yeti_Stereo_Microphone_REV8-00:output:analog-output-speaker:channelMap=FL;FR;
 alsa_card.usb-Blue_Microphones_Yeti_Stereo_Microphone_REV8-00:output:analog-output-speaker:channelVolumes=0.72905933856964;0.72905933856964;

@@ -93,4 +93,14 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/sebastian/Pictures/wallpapers/arch.png" added="2022-12-18T15:09:58.169105Z" modified="2022-12-18T15:09:58.169119Z" visited="2022-12-18T15:09:58.169106Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="google-chrome" exec="&apos;google-chrome %u&apos;" modified="2022-12-18T15:09:58.169112Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>
