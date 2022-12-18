@@ -37,7 +37,7 @@ exec_always setxkbmap -layout se
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id feh --bg-scale /home/sebastian/Pictures/wallpapers/current_blue_orginal.png
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/polybar-collection/launch.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id blueman-applet
 # Use Mouse+$mod to drag floating windows to their wanted position

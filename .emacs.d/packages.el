@@ -49,7 +49,6 @@
   :config
   (dashboard-setup-startup-hook))
 
-(require 'all-the-icons)
 
 ;;All icons
 (use-package all-the-icons
