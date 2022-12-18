@@ -22,7 +22,7 @@ ZSH_THEME=""
 colorscript exec crunchbang
 
 #Plugins
-plugins=(git zsh-autosuggestions)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
