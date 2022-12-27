@@ -113,4 +113,82 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/sebastian/Pictures/wallpapers/gradient-tokyo-skyline-with-neon-colours_52683-46231.webp" added="2022-12-18T20:53:20.408021Z" modified="2022-12-18T20:53:20.408040Z" visited="2022-12-18T20:53:20.408023Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/webp"/>
+        <bookmark:applications>
+          <bookmark:application name="google-chrome" exec="&apos;google-chrome %u&apos;" modified="2022-12-18T20:53:20.408031Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sebastian/Pictures/wallpapers" added="2022-12-18T20:53:58.605264Z" modified="2022-12-18T20:53:58.605275Z" visited="2022-12-18T20:53:58.605265Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2022-12-18T20:53:58.605269Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sebastian/Pictures/wallpapers/tokyo.png" added="2022-12-18T20:54:20.177888Z" modified="2022-12-18T20:54:20.177901Z" visited="2022-12-18T20:54:20.177889Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="google-chrome" exec="&apos;google-chrome %u&apos;" modified="2022-12-18T20:54:20.177895Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sebastian/Pictures/wallpapers/tokyo1.jpg" added="2022-12-18T20:59:40.165696Z" modified="2022-12-18T20:59:40.165708Z" visited="2022-12-18T20:59:40.165698Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="google-chrome" exec="&apos;google-chrome %u&apos;" modified="2022-12-18T20:59:40.165702Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sebastian/Pictures/wallpapers/dracula.jpg" added="2022-12-18T21:19:28.380422Z" modified="2022-12-18T21:19:28.380438Z" visited="2022-12-18T21:19:28.380425Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="google-chrome" exec="&apos;google-chrome %u&apos;" modified="2022-12-18T21:19:28.380430Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sebastian/screen1.png" added="2022-12-18T21:28:09.162531Z" modified="2022-12-18T21:28:33.434651Z" visited="2022-12-18T21:28:09.162532Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="GNOME Screenshot" exec="&apos;feh %u&apos;" modified="2022-12-18T21:28:09.162534Z" count="1"/>
+          <bookmark:application name="discord" exec="&apos;discord %u&apos;" modified="2022-12-18T21:28:33.434647Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sebastian/Screenshot%20from%202022-12-18%2022-29-05.png" added="2022-12-18T21:29:10.051872Z" modified="2022-12-18T21:29:19.040178Z" visited="2022-12-18T21:29:10.051873Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="GNOME Screenshot" exec="&apos;feh %u&apos;" modified="2022-12-18T21:29:10.051877Z" count="1"/>
+          <bookmark:application name="discord" exec="&apos;discord %u&apos;" modified="2022-12-18T21:29:19.040175Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>

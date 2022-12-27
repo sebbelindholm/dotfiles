@@ -5,7 +5,12 @@
 
 ;;Adds global absolute line number
 (global-display-line-numbers-mode t)
-
+;;Modes where no line numbers are used
+(dolist (mode '(org-mode-hook
+		term-mode-hook
+		shell-mode-hook
+		eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 ;;Removes bars
 (menu-bar-mode -1)
 (tool-bar-mode -1)
