@@ -1,0 +1,8 @@
+ [user]
+	email = sebastianlindholm@outlook.com
+	name = Sebastian Lindholm Gustafsson
+[core]
+    excludefiles = ${HOME}/.global_gitignore
+
+[init]
+  defaultBranch = main

@@ -1,0 +1,27 @@
+
+[global]
+
+font = Jetbrains Mono NF 12
+
+width = 300
+height = 200
+origin = top-center
+corner_radius = 8 
+offset = 10x10
+padding = 10
+
+frame_color = "#89b4fa"
+separator_color= frame
+
+[urgency_low]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[urgency_normal]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[urgency_critical]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+frame_color = "#fab387"

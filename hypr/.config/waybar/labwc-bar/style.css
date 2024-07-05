@@ -1,0 +1,87 @@
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: Material Design Icons, JetBrainsMono Nerd Font;
+  font-size: 14px;
+  font-weight: Bold;
+}
+
+window#waybar {
+  background-color: #1D2021;
+  color: ghostwhite;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+#taskbar {
+    color: ghostwhite;
+}
+
+#taskbar button {
+    color: ghostwhite;
+    background-color: #303233;
+    border-radius: 4px;
+    margin: 6px 3px;
+    padding: 4px 12px;
+
+}
+
+#taskbar button.active {
+    background-color: #504945;
+}
+
+#memory,
+#custom-power,
+#battery,
+#backlight,
+#pulseaudio,
+#network,
+#backlight,
+#clock,
+#tray {
+  border-radius: 4px;
+  margin: 6px 3px;
+  padding: 4px 12px;
+  background-color: #303233;
+  color: ghostwhite;
+}
+
+#custom-power {
+  margin-right: 6px;
+}
+
+#custom-logo {
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-left: 5px;
+  font-size: 15px;
+  border-radius: 8px 0px 0px 8px;
+  color: #1793d1;
+}
+
+@keyframes blink {
+  to {
+    background-color: #f38ba8;
+    color: #181825;
+  }
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  background-color: #ff0048;
+  color: #181825;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#battery.charging {
+  background-color: #a6e3a1;
+}
