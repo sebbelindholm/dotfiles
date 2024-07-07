@@ -20,5 +20,6 @@ alias dconf_load='$HOME/Scripts/load_dconf.sh'
 alias start_laptop='Hyprland --config $HOME/.config/hypr/nvidia.conf'
 alias start_desktop='Hyprland --config $HOME/.config/hypr/desktop.conf'
 alias start_kde='/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland'
+alias dnf='dnf5'
 
 export PATH=~/.config/emacs/bin:$PATH
