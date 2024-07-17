@@ -2,13 +2,26 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.5",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        dependencies = { "nvim-lua/plenary.nvim", "scottmckendry/telescope-resession.nvim" },
 
         config = function()
+            require("telescope").setup({
+                extensions = {
+                    resession = {
+                        prompt_title = "Find Sessions",
+                        dir = "session",
+                        path_substitutions = {
+                            { find = "/home/sebastian/", replace = "󱂵" },
+                        },
+                    },
+                }
+            })
+
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
             vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
             vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+            vim.keymap.set("n", "<leader>rs", "<cmd>Telescope resession <CR>")
 --            vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true <CR>")
         end,
     },

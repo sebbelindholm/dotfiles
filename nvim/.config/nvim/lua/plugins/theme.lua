@@ -1,9 +1,9 @@
 return {
-        "Mofiqul/adwaita.nvim",
+        "EdenEast/nightfox.nvim",
         lazy = false,
         priority = 1000,
 
     config = function()
-        vim.cmd("colorscheme adwaita")
+        vim.cmd("colorscheme carbonfox")
     end
 }

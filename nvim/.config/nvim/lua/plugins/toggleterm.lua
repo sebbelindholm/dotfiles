@@ -12,14 +12,14 @@ return {
             start_in_insert = true,
             insert_mappings = true,
             persist_size = true,
-            direction = "horizontal",
+            direction = "float",
             close_on_exit = true,
             shell = vim.o.shell,
             float_opts = {
                 border = "curved",
                 winbled = 0,
                 highlight = {
-                    border = "Nomral",
+                    border = "Normal",
                     background = "Normal",
                 },
             },
