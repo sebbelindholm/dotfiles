@@ -23,3 +23,4 @@ alias start_kde='/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma
 alias dnf='sudo dnf5'
 
 export PATH=~/.config/emacs/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH

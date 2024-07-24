@@ -9,6 +9,8 @@ vim.g.mapleader = " "
 vim.cmd("set termguicolors")
 vim.opt.fillchars = {eob = " "}
 
+--vim.cmd("colorscheme base-onedark")
+
 vim.keymap.set("n", "<leader>v", ":vsplit", {})
 vim.keymap.set("n", "<leader>s", ":split", {})
 vim.keymap.set("n", "<Tab>", ":bn<cr>", {})

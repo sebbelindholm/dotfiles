@@ -1,9 +1,16 @@
 return {
-        "EdenEast/nightfox.nvim",
+    {
+        "raddari/last-color.nvim",
         lazy = false,
-        priority = 1000,
-
-    config = function()
-        vim.cmd("colorscheme carbonfox")
-    end
+    },
+    {
+        "aikow/base.nvim",
+        opts = {},
+        config = function()
+            require('base').setup({})
+            local theme = require('last-color').recall() or 'default'
+            vim.cmd.colorscheme(theme)
+            --vim.cmd.colorscheme('base-onedark')
+        end
+    }
 }
