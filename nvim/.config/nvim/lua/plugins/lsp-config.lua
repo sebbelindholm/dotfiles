@@ -8,9 +8,17 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-        config = function()
-            require("mason-lspconfig").setup({
-                ensure_installed = { "rust_analyzer", "lua_ls", "clangd", "bashls", "cssls", "html", "pylsp" },
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"rust_analyzer",
+					"lua_ls",
+					"clangd",
+					"bashls",
+					"cssls",
+					"html",
+					"pylsp",
+				},
 			})
 		end,
 	},
@@ -28,7 +36,6 @@ return {
 			lspconfig.pylsp.setup({
 				capabilities = capabilities,
 			})
-
 
 			lspconfig.cssls.setup({
 				capabilities = capabilities,
