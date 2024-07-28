@@ -1,5 +1,28 @@
 return {
 	{
+		"j-hui/fidget.nvim",
+		tag = "legacy",
+		event = "LspAttach",
+		opts = {
+			text = {
+				done = "",
+			},
+			window = {
+				blend = 0,
+			},
+		},
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "InsertEnter",
+		opts = {
+			bind = true,
+			handler_opts = {
+				border = "single",
+			},
+		},
+	},
+	{
 		"echasnovski/mini.icons",
 		opts = {},
 		lazy = true,

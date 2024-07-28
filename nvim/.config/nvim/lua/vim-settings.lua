@@ -7,6 +7,8 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.g.mapleader = " "
 vim.cmd("set termguicolors")
+vim.opt.laststatus = 3
+vim.opt.showtabline = 0
 vim.opt.fillchars = { eob = " " }
 
 --vim.cmd("colorscheme base-onedark")
