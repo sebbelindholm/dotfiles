@@ -1,18 +1,28 @@
 local wezterm = require("wezterm")
 local keybinds = require("keybinds")
 local appearence = require("appearence")
+<<<<<<< HEAD
 local tabs = require("tabs")
 local theme = require("theme")
+=======
+local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+>>>>>>> 64081bcb0104b144b84ceeb3411b83e3c8ac72ab
 
 local config = wezterm.config_builder()
 
 keybinds.apply_to_config(config)
 appearence.apply_to_config(config)
+<<<<<<< HEAD
 tabs.apply_to_config(config)
 theme.apply_to_config(config)
 --bar.apply_to_config(config)
 
 config.font = wezterm.font("Jetbrains Mono Nerd Font")
+=======
+--bar.apply_to_config(config)
+
+config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
+>>>>>>> 64081bcb0104b144b84ceeb3411b83e3c8ac72ab
 config.font_size = 14
 config.color_scheme = "One Dark (Gogh)"
 config.line_height = 1.1
