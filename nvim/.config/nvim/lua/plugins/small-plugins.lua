@@ -1,5 +1,60 @@
 return {
 	{
+		"mistricky/codesnap.nvim",
+		build = "make",
+		keys = {
+			{ "<leader>cc", "<cmd>CodeSnap<cr>", mode = "x", desc = "Save selected code snapshot into clipboard" },
+			{ "<leader>cs", "<cmd>CodeSnapSave<cr>", mode = "x", desc = "Save selected code snapshot in ~/Pictures" },
+		},
+		opts = {
+			save_path = "~/Pictures",
+			has_breadcrumbs = true,
+			bg_theme = "grape",
+		},
+		config = function()
+			require("codesnap").setup({})
+		end,
+	},
+	{
+		"nacro90/numb.nvim",
+		config = function()
+			require("numb").setup()
+		end,
+	},
+	{
+		"folke/twilight.nvim",
+		opts = {
+			context = 10,
+			treesitter = true,
+			expand = {
+				"function",
+				"method",
+				"table",
+				"if_statement",
+			},
+		},
+		config = function()
+			vim.api.nvim_set_keymap("n", "<leader>tt", "<CMD>Twilight<CR>", { silent = true })
+		end,
+	},
+	{
+		"filipdutescu/renamer.nvim",
+		config = function()
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>rn",
+				'<cmd>lua require("renamer").rename()<cr>',
+				{ noremap = true, silent = true }
+			)
+			vim.api.nvim_set_keymap(
+				"v",
+				"<leader>rn",
+				'<cmd>lua require("renamer").rename()<cr>',
+				{ noremap = true, silent = true }
+			)
+		end,
+	},
+	{
 		"j-hui/fidget.nvim",
 		tag = "legacy",
 		event = "LspAttach",
