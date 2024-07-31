@@ -9,10 +9,16 @@ vim.g.mapleader = " "
 vim.cmd("set termguicolors")
 vim.opt.laststatus = 3
 vim.opt.showtabline = 0
+vim.opt.sessionoptions = "curdir,folds,globals,tabpages,terminal,winsize"
 vim.opt.fillchars = { eob = " " }
+vim.opt.undofile = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.scrolloff = 10
 
---vim.cmd("colorscheme base-onedark")
-
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>vv", ":vsplit<CR>", { silent = true })
 vim.keymap.set("n", "<leader>vs", ":split<CR>", { silent = true })
 vim.keymap.set("n", "<Tab>", ":bn<cr>", { silent = true })
@@ -22,10 +28,16 @@ vim.keymap.set("n", "<C-v>", '"+p')
 vim.keymap.set("v", "<C-c>", '"+y')
 vim.keymap.set("n", "<leader>db", ":bdelete<CR>", { silent = true })
 
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
 vim.keymap.set("n", "<C-h>", "<C-W>h")
 vim.keymap.set("n", "<C-j>", "<C-W>j")
 vim.keymap.set("n", "<C-k>", "<C-W>k")
 vim.keymap.set("n", "<C-l>", "<C-W>l")
+
+vim.schedule(function()
+	vim.opt.clipboard = "unnamedplus"
+end)
 
 function _G.set_terminal_keymap()
 	local opts = { noremap = true }
