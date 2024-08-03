@@ -17,8 +17,18 @@ return {
 		opts = {},
 		config = function()
 			require("precognition").setup()
-			vim.api.nvim_set_keymap("n", "<leader>pt", "<CMD>Precognition toggle<CR>", { silent = true })
-			vim.api.nvim_set_keymap("n", "<leader>pp", "<CMD>Precognition peek<CR>", { silent = true })
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>pt",
+				"<CMD>Precognition toggle<CR>",
+				{ silent = true, desc = "Toggle navigation help" }
+			)
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>pp",
+				"<CMD>Precognition peek<CR>",
+				{ silent = true, desc = "Turn off navigation help" }
+			)
 		end,
 	},
 	{
@@ -64,7 +74,12 @@ return {
 			},
 		},
 		config = function()
-			vim.api.nvim_set_keymap("n", "<leader>tt", "<CMD>Twilight<CR>", { silent = true })
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>tt",
+				"<CMD>Twilight<CR>",
+				{ silent = true, desc = "Toggle twilight mode" }
+			)
 		end,
 	},
 	{
@@ -74,13 +89,7 @@ return {
 				"n",
 				"<leader>rn",
 				'<cmd>lua require("renamer").rename()<cr>',
-				{ noremap = true, silent = true }
-			)
-			vim.api.nvim_set_keymap(
-				"v",
-				"<leader>rn",
-				'<cmd>lua require("renamer").rename()<cr>',
-				{ noremap = true, silent = true }
+				{ noremap = true, silent = true, desc = "Rename" }
 			)
 		end,
 	},
@@ -130,7 +139,7 @@ return {
 	{
 		"yorickpeterse/nvim-window",
 		keys = {
-			{ "<leader>w", "<cmd>lua require('nvim-window').pick()<cr>", desc = "nvim-window: Jump to window" },
+			{ "<leader>w", "<cmd>lua require('nvim-window').pick()<cr>", desc = "Jump to window" },
 		},
 		config = true,
 	},

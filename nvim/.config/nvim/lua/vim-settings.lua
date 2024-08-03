@@ -19,14 +19,15 @@ vim.opt.splitbelow = true
 vim.opt.scrolloff = 10
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-vim.keymap.set("n", "<leader>vv", ":vsplit<CR>", { silent = true })
-vim.keymap.set("n", "<leader>vs", ":split<CR>", { silent = true })
+vim.keymap.set("n", "<leader>vv", ":vsplit<CR>", { silent = true, desc = "Split vertical" })
+vim.keymap.set("n", "<leader>vs", ":split<CR>", { silent = true, desc = "Split horizontal" })
 vim.keymap.set("n", "<Tab>", ":bn<cr>", { silent = true })
 vim.keymap.set("n", "<S-Tab>", ":bp<cr>", { silent = true })
 vim.keymap.set("n", "<C-Tab>", "<C-w><C-w>", {})
 vim.keymap.set("n", "<C-v>", '"+p')
 vim.keymap.set("v", "<C-c>", '"+y')
-vim.keymap.set("n", "<leader>db", ":bdelete<CR>", { silent = true })
+vim.keymap.set("n", "<leader>db", ":bdelete<CR>", { silent = true, desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>dw", "<C-w>c", { desc = "Delete window (keep buffer)" })
 
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 

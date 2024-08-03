@@ -9,9 +9,9 @@ return {
 				notify = true,
 			},
 		})
-		vim.keymap.set("n", "<leader>ss", resession.save)
-		vim.keymap.set("n", "<leader>sl", resession.load)
-		vim.keymap.set("n", "<leader>sd", resession.delete)
+		vim.keymap.set("n", "<leader>ss", resession.save, { desc = "Session save" })
+		vim.keymap.set("n", "<leader>sl", resession.load, { desc = "Session load" })
+		vim.keymap.set("n", "<leader>sd", resession.delete, { desc = "Session delete" })
 
 		vim.api.nvim_create_autocmd("VimLeavePre", {
 			callback = function()

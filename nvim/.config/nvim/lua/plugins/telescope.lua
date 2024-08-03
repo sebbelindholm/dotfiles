@@ -44,16 +44,31 @@ return {
 			})
 
 			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-			vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-			vim.keymap.set("n", "<leader>fh", builtin.oldfiles, {})
-			vim.keymap.set("n", "<leader>rs", "<cmd>Telescope resession <CR>", { silent = true })
-			vim.keymap.set("n", "<leader>ft", builtin.colorscheme, {})
-			vim.keymap.set("n", "<leader><leader>", ":Telescope file_browser<CR>", { silent = true })
-			vim.keymap.set("n", "<leader>fm", ":Telescope bookmarks list<CR>", { silent = true })
-			vim.keymap.set("n", "<leader>fc", "<CMD>Telescope neoclip<CR>", { silent = true })
-			vim.keymap.set("n", "<leader>fo", "<CMD>Telescope macroscope<CR>", { silent = true })
+			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Search live grep" })
+			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Search files" })
+			vim.keymap.set("n", "<leader>fh", builtin.oldfiles, { desc = "Recent files" })
+			vim.keymap.set(
+				"n",
+				"<leader>rs",
+				"<cmd>Telescope resession <CR>",
+				{ silent = true, desc = "Saved sessions" }
+			)
+			vim.keymap.set("n", "<leader>ft", builtin.colorscheme, { desc = "Select theme" })
+			vim.keymap.set(
+				"n",
+				"<leader><leader>",
+				":Telescope file_browser<CR>",
+				{ silent = true, desc = "Ivy file browser" }
+			)
+			vim.keymap.set(
+				"n",
+				"<leader>fm",
+				":Telescope bookmarks list<CR>",
+				{ silent = true, desc = "Bookmarks list" }
+			)
+			vim.keymap.set("n", "<leader>fc", "<CMD>Telescope neoclip<CR>", { silent = true, desc = "Clipboard" })
+			vim.keymap.set("n", "<leader>fo", "<CMD>Telescope macroscope<CR>", { silent = true, desc = "saved macros" })
 			--vim.keymap.set("n", "<leader>g", require("telescope").extensions.file_browser.file_browser(require("telescope.themes").get_ivy({layout_config = {height = 0.4}})), {})
 			--            vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true <CR>")
 			require("telescope").load_extension("ui-select")
