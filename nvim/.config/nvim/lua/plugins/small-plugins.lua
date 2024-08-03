@@ -1,5 +1,27 @@
 return {
 	{
+		"alec-gibson/nvim-tetris",
+	},
+	{
+		"tamton-aquib/zone.nvim",
+		config = function()
+			require("zone").setup({
+				style = "vanish",
+				after = 120,
+				exclude_filetypes = { "TelescopePrompt", "NvimTree", "neo-tree", "dashboard", "lazy" },
+			})
+		end,
+	},
+	{
+		"tris203/precognition.nvim",
+		opts = {},
+		config = function()
+			require("precognition").setup()
+			vim.api.nvim_set_keymap("n", "<leader>pt", "<CMD>Precognition toggle<CR>", { silent = true })
+			vim.api.nvim_set_keymap("n", "<leader>pp", "<CMD>Precognition peek<CR>", { silent = true })
+		end,
+	},
+	{
 		"gorbit99/codewindow.nvim",
 		config = function()
 			local codewindow = require("codewindow")

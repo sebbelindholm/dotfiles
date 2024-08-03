@@ -48,16 +48,19 @@ return {
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 			vim.keymap.set("n", "<leader>fh", builtin.oldfiles, {})
-			vim.keymap.set("n", "<leader>rs", "<cmd>Telescope resession <CR>")
+			vim.keymap.set("n", "<leader>rs", "<cmd>Telescope resession <CR>", { silent = true })
 			vim.keymap.set("n", "<leader>ft", builtin.colorscheme, {})
-			vim.keymap.set("n", "<leader><leader>", ":Telescope file_browser<CR>")
-			vim.keymap.set("n", "<leader>fm", ":Telescope bookmarks list<CR>")
+			vim.keymap.set("n", "<leader><leader>", ":Telescope file_browser<CR>", { silent = true })
+			vim.keymap.set("n", "<leader>fm", ":Telescope bookmarks list<CR>", { silent = true })
+			vim.keymap.set("n", "<leader>fc", "<CMD>Telescope neoclip<CR>", { silent = true })
+			vim.keymap.set("n", "<leader>fo", "<CMD>Telescope macroscope<CR>", { silent = true })
 			--vim.keymap.set("n", "<leader>g", require("telescope").extensions.file_browser.file_browser(require("telescope.themes").get_ivy({layout_config = {height = 0.4}})), {})
 			--            vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true <CR>")
 			require("telescope").load_extension("ui-select")
 			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("file_browser")
 			require("telescope").load_extension("bookmarks")
+			require("telescope").load_extension("neoclip")
 		end,
 	},
 	{
@@ -98,6 +101,16 @@ return {
 			})
 		end,
 	},
+	{
+		"AckslD/nvim-neoclip.lua",
+		dependencies = { "kkharji/sqlite.lua", module = "sqlite" },
+		config = function()
+			require("neoclip").setup({
+				history = 1000,
+				enable_persistent_history = true,
+				continuous_sync = true,
+				enable_macro_history = true,
+			})
+		end,
+	},
 }
-
--- "rg", "--files", "--hidden", "--glob", "!**/.git/*", "--glob", "!**/.cargo/*", "--glob", "!**/.java/*", "--glob", "!**/.cache/*", "--glob", "!**/.rustup/*", "--glob", "!**/.npm/*", "--glob", "!**/go/*", "--glob", "!**/Steam/*"}
