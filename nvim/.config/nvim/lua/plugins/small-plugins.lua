@@ -1,22 +1,8 @@
 return {
 	{
-		"alec-gibson/nvim-tetris",
-	},
-	{
-		"tamton-aquib/zone.nvim",
-		config = function()
-			require("zone").setup({
-				style = "epilepsy",
-				after = 120,
-				exclude_filetypes = { "TelescopePrompt", "NvimTree", "neo-tree", "dashboard", "lazy" },
-			})
-		end,
-	},
-	{
 		"tris203/precognition.nvim",
-		opts = {},
 		config = function()
-			require("precognition").setup()
+			require("precognition").setup({ startVisible = false })
 			vim.api.nvim_set_keymap(
 				"n",
 				"<leader>pt",
@@ -27,36 +13,21 @@ return {
 				"n",
 				"<leader>pp",
 				"<CMD>Precognition peek<CR>",
-				{ silent = true, desc = "Turn off navigation help" }
+				{ silent = true, desc = "Peek at navigation help" }
 			)
 		end,
 	},
-	{
-		"gvanishorbit99/codewindow.nvim",
-		config = function()
-			local codewindow = require("codewindow")
-			codewindow.setup()
-			codewindow.apply_default_keybinds()
-		end,
-	},
-	{
-		"mistricky/codesnap.nvim",
-		build = "make",
-		keys = {
-			{ "<leader>cc", "<cmd>CodeSnap<cr>", mode = "x", desc = "Save selected code snapshot into clipboard" },
-			{ "<leader>cs", "<cmd>CodeSnapSave<cr>", mode = "x", desc = "Save selected code snapshot in ~/Pictures" },
-		},
-		opts = {
-			save_path = "~/Pictures",
-			has_breadcrumbs = true,
-			bg_theme = "grape",
-		},
-		config = function()
-			require("codesnap").setup({})
-		end,
-	},
+	--	{
+	--		"gvanishorbit99/codewindow.nvim",
+	--		config = function()
+	--			local codewindow = require("codewindow")
+	--			codewindow.setup()
+	--			codewindow.apply_default_keybinds()
+	--		end,
+	--	},
 	{
 		"nacro90/numb.nvim",
+		enabled = false,
 		config = function()
 			require("numb").setup()
 		end,
@@ -83,28 +54,16 @@ return {
 		end,
 	},
 	{
-		"filipdutescu/renamer.nvim",
+		"j-hui/fidget.nvim",
 		config = function()
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>rn",
-				'<cmd>lua require("renamer").rename()<cr>',
-				{ noremap = true, silent = true, desc = "Rename" }
-			)
+			require("fidget").setup({})
 		end,
 	},
 	{
-		"j-hui/fidget.nvim",
-		tag = "legacy",
-		event = "LspAttach",
-		opts = {
-			text = {
-				done = "",
-			},
-			window = {
-				blend = 0,
-			},
-		},
+		"vigoux/notifier.nvim",
+		config = function()
+			require("notifier").setup({})
+		end,
 	},
 	{
 		"ray-x/lsp_signature.nvim",
@@ -122,11 +81,6 @@ return {
 		lazy = true,
 	},
 	{
-		"theRealCarneiro/hyprland-vim-syntax",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		ft = "hypr",
-	},
-	{
 		"lambdalisue/suda.vim",
 	},
 	{
@@ -142,9 +96,6 @@ return {
 			{ "<leader>w", "<cmd>lua require('nvim-window').pick()<cr>", desc = "Jump to window" },
 		},
 		config = true,
-	},
-	{
-		"tris203/precognition.nvim",
 	},
 	{
 		"NvChad/nvim-colorizer.lua",

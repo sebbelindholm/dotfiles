@@ -17,12 +17,14 @@ vim.opt.smartcase = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.scrolloff = 10
+vim.cmd("set conceallevel=2")
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>vv", ":vsplit<CR>", { silent = true, desc = "Split vertical" })
 vim.keymap.set("n", "<leader>vs", ":split<CR>", { silent = true, desc = "Split horizontal" })
-vim.keymap.set("n", "<Tab>", ":bn<cr>", { silent = true })
-vim.keymap.set("n", "<S-Tab>", ":bp<cr>", { silent = true })
+--vim.keymap.set("n", "<Tab>", ":bn<cr>", { silent = true })
+--vim.keymap.set("n", "<S-Tab>", ":bp<cr>", { silent = true })
+vim.keymap.set("c", "<tab>", "<C-z>", { silent = false })
 vim.keymap.set("n", "<C-Tab>", "<C-w><C-w>", {})
 vim.keymap.set("n", "<C-v>", '"+p')
 vim.keymap.set("v", "<C-c>", '"+y')
