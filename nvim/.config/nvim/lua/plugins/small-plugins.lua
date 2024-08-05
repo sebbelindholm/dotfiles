@@ -6,7 +6,7 @@ return {
 		"tamton-aquib/zone.nvim",
 		config = function()
 			require("zone").setup({
-				style = "vanish",
+				style = "epilepsy",
 				after = 120,
 				exclude_filetypes = { "TelescopePrompt", "NvimTree", "neo-tree", "dashboard", "lazy" },
 			})
@@ -32,7 +32,7 @@ return {
 		end,
 	},
 	{
-		"gorbit99/codewindow.nvim",
+		"gvanishorbit99/codewindow.nvim",
 		config = function()
 			local codewindow = require("codewindow")
 			codewindow.setup()
