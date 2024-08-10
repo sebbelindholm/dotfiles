@@ -27,7 +27,6 @@ return {
 	--	},
 	{
 		"nacro90/numb.nvim",
-		enabled = false,
 		config = function()
 			require("numb").setup()
 		end,

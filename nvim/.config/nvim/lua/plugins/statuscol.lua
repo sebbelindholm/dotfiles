@@ -28,6 +28,7 @@ return {
 			require("statuscol").setup({
 				-- setopt = true,
 				relculright = true,
+				ft_ignore = { "neo-tree", "alpha" },
 				clickhandlers = {
 					Lnum = builtin.gitsigns_click,
 				},
