@@ -2,15 +2,15 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
-vim.cmd("set laststatus=3")
-vim.cmd("set number")
-vim.cmd("set relativenumber")
 vim.g.mapleader = " "
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = "number"
 vim.cmd("set termguicolors")
 vim.opt.laststatus = 3
 vim.opt.showtabline = 0
 vim.opt.sessionoptions = "curdir,folds,globals,tabpages,terminal,winsize"
-vim.opt.fillchars = { eob = " " }
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:|,foldclose:]]
 vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -22,8 +22,6 @@ vim.cmd("set conceallevel=2")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>vv", ":vsplit<CR>", { silent = true, desc = "Split vertical" })
 vim.keymap.set("n", "<leader>vs", ":split<CR>", { silent = true, desc = "Split horizontal" })
---vim.keymap.set("n", "<Tab>", ":bn<cr>", { silent = true })
---vim.keymap.set("n", "<S-Tab>", ":bp<cr>", { silent = true })
 vim.keymap.set("c", "<tab>", "<C-z>", { silent = false })
 vim.keymap.set("n", "<C-Tab>", "<C-w><C-w>", {})
 vim.keymap.set("n", "<C-v>", '"+p')

@@ -11,6 +11,7 @@ return {
 			local theme = require("last-color").recall() or "default"
 			vim.cmd.colorscheme(theme)
 			vim.cmd("hi LineNr guibg=NONE")
+			vim.cmd("hi FoldColumn guibg=NONE")
 		end,
 	},
 }
