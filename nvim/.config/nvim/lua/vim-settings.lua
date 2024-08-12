@@ -8,7 +8,7 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
 vim.cmd("set termguicolors")
 vim.opt.laststatus = 3
-vim.opt.showtabline = 0
+--vim.opt.showtabline = 0
 vim.opt.sessionoptions = "curdir,folds,globals,tabpages,terminal,winsize"
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:|,foldclose:]]
 vim.opt.undofile = true
