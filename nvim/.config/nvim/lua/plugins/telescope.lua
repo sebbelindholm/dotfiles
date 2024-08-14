@@ -13,15 +13,13 @@ return {
 				},
 				defaults = {
 					vimgrep_arguments = {
-						"fg",
-						--                        "--color=never",
+						"rg",
 						"--no-heading",
 						"--with-filename",
 						"--line-number",
 						"--column",
 						"--smart-case",
-						--                        "--hidden",
-						--                        "--uuu"
+						"--hidden",
 					},
 				},
 				extensions = {
@@ -67,8 +65,8 @@ return {
 				":Telescope bookmarks list<CR>",
 				{ silent = true, desc = "Bookmarks list" }
 			)
-			vim.keymap.set("n", "<leader>fc", "<CMD>Telescope neoclip<CR>", { silent = true, desc = "Clipboard" })
-			vim.keymap.set("n", "<leader>fo", "<CMD>Telescope macroscope<CR>", { silent = true, desc = "saved macros" })
+			vim.keymap.set("n", "<leader>fc", "<CMD>TelescoPe neoclip<CR>", { silent = true, desc = "Clipboard" })
+			vim.keymap.set("n", "<leader>fo", "<CMD>Telescope macroscope<CR>", { silent = true, desc = "Saved macros" })
 			--vim.keymap.set("n", "<leader>g", require("telescope").extensions.file_browser.file_browser(require("telescope.themes").get_ivy({layout_config = {height = 0.4}})), {})
 			--            vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true <CR>")
 			require("telescope").load_extension("ui-select")

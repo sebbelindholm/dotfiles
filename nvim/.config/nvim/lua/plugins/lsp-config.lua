@@ -32,23 +32,23 @@ return {
 			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
-
 			lspconfig.pylsp.setup({
 				capabilities = capabilities,
 			})
-
 			lspconfig.cssls.setup({
 				capabilities = capabilities,
 			})
-
 			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
-
 			lspconfig.lua_ls.setup({
+				settings = {
+					Lua = {
+						diagnostics = { globals = { "vim" } },
+					},
+				},
 				capabilities = capabilities,
 			})
-
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
 			})
@@ -61,8 +61,6 @@ return {
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 			vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 
-			-- Use LspAttach autocommand to only map the following keys
-			-- after the language server attaches to the current buffer
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(ev)

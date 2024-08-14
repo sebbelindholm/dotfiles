@@ -10,6 +10,8 @@ return {
 				bash = { "shellcheck" },
 				sh = { "shellcheck" },
 				zsh = { "shellcheck" },
+				c = { "cpplint" },
+				--				lua = { "luacheck" },
 			}
 
 			vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
@@ -24,7 +26,11 @@ return {
 		"rshkarin/mason-nvim-lint",
 		config = function()
 			require("mason-nvim-lint").setup({
-				ensure_installed = {},
+				ensure_installed = {
+					"shellcheck",
+					"cpplint",
+					"luacheck",
+				},
 			})
 		end,
 	},
