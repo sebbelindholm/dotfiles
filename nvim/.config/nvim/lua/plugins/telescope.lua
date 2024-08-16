@@ -2,7 +2,7 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
-		dependencies = { "nvim-lua/plenary.nvim", "scottmckendry/telescope-resession.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim" },
 
 		config = function()
 			require("telescope").setup({
@@ -46,12 +46,6 @@ return {
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Search files" })
 			vim.keymap.set("n", "<leader>fh", builtin.oldfiles, { desc = "Recent files" })
-			vim.keymap.set(
-				"n",
-				"<leader>rs",
-				"<cmd>Telescope resession <CR>",
-				{ silent = true, desc = "Saved sessions" }
-			)
 			vim.keymap.set("n", "<leader>ft", builtin.colorscheme, { desc = "Select theme" })
 			vim.keymap.set(
 				"n",
@@ -67,8 +61,6 @@ return {
 			)
 			vim.keymap.set("n", "<leader>fc", "<CMD>TelescoPe neoclip<CR>", { silent = true, desc = "Clipboard" })
 			vim.keymap.set("n", "<leader>fo", "<CMD>Telescope macroscope<CR>", { silent = true, desc = "Saved macros" })
-			--vim.keymap.set("n", "<leader>g", require("telescope").extensions.file_browser.file_browser(require("telescope.themes").get_ivy({layout_config = {height = 0.4}})), {})
-			--            vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true <CR>")
 			require("telescope").load_extension("ui-select")
 			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("file_browser")

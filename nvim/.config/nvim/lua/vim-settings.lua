@@ -1,23 +1,22 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
 vim.g.mapleader = " "
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.signcolumn = "number"
-vim.cmd("set termguicolors")
-vim.opt.laststatus = 3
---vim.opt.showtabline = 0
-vim.opt.sessionoptions = "curdir,folds,globals,tabpages,terminal,winsize"
+vim.o.expandtab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.signcolumn = "number"
+vim.o.termguicolors = true
+vim.o.laststatus = 3
+vim.o.sessionoptions = "curdir,folds,globals,tabpages,terminal,winsize"
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:|,foldclose:]]
-vim.opt.undofile = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.scrolloff = 10
-vim.cmd("set conceallevel=2")
+vim.o.undofile = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.splitright = true
+vim.o.splitbelow = true
+vim.o.scrolloff = 10
+vim.o.conceallevel = 2
+vim.o.shiftwidth = 4
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>vv", ":vsplit<CR>", { silent = true, desc = "Split vertical" })
