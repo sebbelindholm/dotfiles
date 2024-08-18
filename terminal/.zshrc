@@ -21,6 +21,7 @@ alias start_laptop='Hyprland --config $HOME/.config/hypr/nvidia.conf'
 alias start_desktop='Hyprland --config $HOME/.config/hypr/desktop.conf'
 alias start_kde='/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland'
 alias dnf='sudo dnf5'
+alias cl='clear'
 
 export PATH=~/.config/emacs/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
