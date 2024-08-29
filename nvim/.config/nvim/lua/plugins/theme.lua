@@ -5,6 +5,7 @@ return {
 	},
 	{
 		"aikow/base.nvim",
+		lazy = false,
 		opts = {},
 		config = function()
 			require("base").setup({})

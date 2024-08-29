@@ -15,7 +15,7 @@ vim.o.smartcase = true
 vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.scrolloff = 10
-vim.o.conceallevel = 2
+vim.o.conceallevel = 3
 vim.o.shiftwidth = 4
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
