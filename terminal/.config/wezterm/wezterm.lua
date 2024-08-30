@@ -1,16 +1,11 @@
 local wezterm = require("wezterm")
 local keybinds = require("keybinds")
-local appearence = require("appearence")
-local tabs = require("tabs")
----local theme = require("theme")
+local tabline = require("tabline")
 
 local config = wezterm.config_builder()
 
 keybinds.apply_to_config(config)
-appearence.apply_to_config(config)
-tabs.apply_to_config(config)
---theme.apply_to_config(config)
---bar.apply_to_config(config)
+tabline.apply_to_config()
 
 config.font = wezterm.font("Jetbrains Mono Nerd Font")
 config.font_size = 14
