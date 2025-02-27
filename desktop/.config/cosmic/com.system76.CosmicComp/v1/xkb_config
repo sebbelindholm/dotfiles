@@ -1,8 +1,8 @@
 (
     rules: "",
     model: "pc105",
-    layout: "se",
-    variant: "",
+    layout: "se,us",
+    variant: ",",
     options: Some("terminate:ctrl_alt_bksp"),
     repeat_delay: 600,
     repeat_rate: 25,
