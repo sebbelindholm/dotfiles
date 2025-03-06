@@ -44,9 +44,12 @@ return {
 			zsh = { "shfmt" },
 			rust = { "rustfmt" },
 			python = { "isort", "black" },
-			c = { "clangd" },
+			c = { "clangd-format" },
 		},
 		formatters = {
+      clang_format = {
+        prepend_args = { '--style=GNU'}
+      },
 			injected = { options = { ignore_errors = true } },
 		},
 		format_on_save = {
