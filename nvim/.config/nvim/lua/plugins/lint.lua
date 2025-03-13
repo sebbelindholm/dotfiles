@@ -11,7 +11,7 @@ return {
 				sh = { "shellcheck" },
 				zsh = { "shellcheck" },
 				c = { "cpplint" },
-				--				lua = { "luacheck" },
+				lua = { "luacheck" },
 			}
 
 			vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {

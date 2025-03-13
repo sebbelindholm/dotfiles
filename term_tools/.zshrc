@@ -21,6 +21,9 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/sebastian/.zshrc'
 
+export MANPAGER="nvim +Man!"
+export EDITOR="nvim"
+
 alias cat="bat"
 
 eval "$(fzf --zsh)"
@@ -34,7 +37,7 @@ _fzf_compgen_path() {
 }
 
 _fzf_compgen_dir() {
- fd --type=d --hidden --exclude .git . "$1"
+  fd --type=d --hidden --exclude .git . "$1"
 }
 
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
@@ -47,10 +50,10 @@ _fzf_comprun() {
   shift
 
   case "$command" in
-  cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
-    export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
-  ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
+  cd) fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+  export | unset) fzf --preview "eval 'echo $'{}" "$@" ;;
+  ssh) fzf --preview 'dig {}' "$@" ;;
+  *) fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
   esac
 }
 
