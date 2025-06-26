@@ -25,6 +25,8 @@ export MANPAGER="nvim +Man!"
 export EDITOR="nvim"
 
 alias cat="bat"
+alias cleanup="sudo pacman Qdtq | sudo pacman -Rns -"
+alias neofetch="fastfetch"
 
 eval "$(fzf --zsh)"
 
