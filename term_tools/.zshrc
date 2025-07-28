@@ -26,14 +26,16 @@ zstyle :compinstall filename '/home/sebastian/.zshrc'
 export MANPAGER="nvim +Man!"
 export EDITOR="nvim"
 
-PATH=/home/sebastian/.config/emacs/bin:$PATH
+PATH=$HOME/.config/emacs/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
+PATH=$HOME/.local/share/bob/nvim-bin:$PATH
 
 alias cat="bat"
 alias cleanup="sudo pacman Qdtq | sudo pacman -Rns -"
 alias neofetch="fastfetch"
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 alias yayd="yay -Qq | fzf --multi --preview 'yay -Qi {1}' | xargs -ro yay -Rns"
-alias nvimc="NVIM_APPNAME=custom_nvim nvim"
+alias mvim="NVIM_APPNAME=mvim nvim"
 
 eval "$(fzf --zsh)"
 

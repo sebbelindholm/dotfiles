@@ -19,8 +19,6 @@ config.bind("K", "forward")
 config.bind("H", "tab-prev")
 config.bind("L", "tab-next")
 
-downloads.location.directory = { "/home/sebastian/Downloads" }
-
 c.url.searchengines = {
     'DEFAULT':  'https://google.com/search?hl=en&q={}',
 }
