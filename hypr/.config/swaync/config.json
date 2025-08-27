@@ -1,0 +1,100 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "cssPriority": "user",
+  "control-center-margin-top": 5,
+  "control-center-margin-bottom": 5,
+  "control-center-margin-right": 5,
+  "control-center-margin-left": 5,
+  "notification-window-width": 450,
+  "control-center-width": 400,
+  "control-center-height": 800,
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 100,
+  "widgets": [
+    "title",
+    "dnd",
+    "volume",
+    "backlight",
+    "mpris",
+    "buttons-grid",
+    "notifications"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Control Center",
+      "button-text": "Clear all",
+      "clear-all-button": true
+    },
+    "dnd": {
+      "text": "Do not disturb"
+    },
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 12
+    },
+    "volume": {
+      "label": "",
+      "type": "slider",
+      "exec": "pamixer --get-volume",
+      "on-change": "pamixer --set-volume {}",
+      "subwidgets": {
+        "microphone": {
+          "label": "",
+          "type": "slider",
+          "exec": "pamixer --default-source --get-volume",
+          "on-change": "pamixer --default-source --set-volume {}"
+        }
+      }
+    },
+    "backlight": {
+      "label": "",
+      "type": "slider",
+      "exec": "brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}'",
+      "on-change": "brightnessctl set {}%",
+      "subwidgets": {
+        "keyboard": {
+          "label": "",
+          "type": "slider",
+          "exec": "brightnessctl -d 'asus::kbd_backlight' -m | awk -F, '{print substr($4, 0, length($4)-1)}'",
+          "on-change": "brightnessctl -d 'asus::kbd_backlight' set {}%"
+        }
+      }
+    },
+    "buttons-grid": {
+      "type": "buttons-grid",
+      "actions": [
+        {
+          "label": "",
+          "command": "nm-connection-editor"
+        },
+        {
+          "label": "",
+          "command": "blueman-manager"
+        },
+        {
+          "label": "",
+          "command": "hyprlock"
+        },
+        {
+          "label": "",
+          "command": "systemctl poweroff"
+        },
+        {
+          "label": "",
+          "command": "systemctl reboot"
+        },
+        {
+          "label": "",
+          "command": "hyprshot -m region"
+        }
+      ]
+    }
+  }
+}
