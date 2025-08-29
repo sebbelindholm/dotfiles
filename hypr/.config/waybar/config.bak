@@ -1,0 +1,79 @@
+{
+    "layer": "top",
+    "position": "left",
+    "width": 56, // Lite bredare för bättre marginaler
+    "spacing": 0,
+
+    // Modulernas ordning (vertikalt)
+    "modules-top": [
+        "custom/launcher",
+        "wlr/workspaces"
+    ],
+    "modules-center": [],
+    "modules-bottom": [
+        "pulseaudio",
+        "network",
+        "battery",
+        "clock",
+        "tray"
+    ],
+
+    // Modul-konfiguration
+    "custom/launcher": {
+        "format": "󰣆",
+        "tooltip": false,
+        // Ändra 'wofi' till din föredragna app-startare
+        "on-click": "sherlock"
+    },
+
+    "wlr/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "urgent": "!",
+            "default": "·"
+        }
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+
+    "clock": {
+        "format": "<span size='large'>{:%H}</span>\n{:%M}",
+        "tooltip-format": "<big>{:%A %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{icon}",
+        "format-alt": "{capacity}%",
+        "format-charging": "󰂄",
+        "format-plugged": "󰂄",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "network": {
+        "format-wifi": "󰖩",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{ifname} ({essid})",
+        "on-click": "nm-connection-editor"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-alt": "{volume}%",
+        "format-muted": "󰖁",
+        "format-icons": { "default": ["󰕿", "󰖀", "󰖁"] },
+        "on-click": "pavucontrol"
+    }
+}

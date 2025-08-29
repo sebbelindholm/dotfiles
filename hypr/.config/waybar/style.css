@@ -1,0 +1,114 @@
+/* -----------------------------------------------------
+ * Waybar Style - Adwaita Dark (Thin Horizontal)
+ * ----------------------------------------------------- */
+
+/* --- Färgvariabler (Adwaita Dark) --- */
+@define-color bg_color #242424;
+@define-color fg_color #deddda;
+@define-color accent_color #3584e4; /* Adwaita Blue */
+@define-color red #e01b24;
+@define-color green #33d17a;
+@define-color yellow #f6d32d;
+@define-color border_color alpha(#deddda, 0.1);
+
+* {
+    font-family: "JetBrainsMono Nerd Font", FontAwesome, sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: @bg_color;
+    color: @fg_color;
+}
+
+/* --- "Piller"-design för moduler --- */
+#workspaces,
+#custom-launcher,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#tray,
+#custom-notifications {
+    padding: 2px 12px;
+    margin: 4px 0px;
+    background-color: alpha(@fg_color, 0.1);
+    border-radius: 12px;
+}
+
+/* --- Vänster sida --- */
+#custom-launcher {
+    font-size: 18px;
+    margin-left: 6px;
+    color: @accent_color;
+}
+
+#workspaces {
+    background: none;
+    margin-left: 6px;
+}
+
+#workspaces button {
+    /* Grundläggande stil för ALLA knappar */
+    padding: 0 10px;
+    margin: 0 3px;
+    border-radius: 10px;
+    color: alpha(@fg_color, 0.7);
+    background-color: alpha(black, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@fg_color, 0.2);
+}
+
+#workspaces button.active {
+    /* Stil för ENDAST den aktiva knappen */
+    color: white; 
+    background-color: @accent_color;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: white;
+}
+
+/* --- Mitten --- */
+#clock {
+    font-weight: bold;
+    color: white;
+    background-color: @accent_color;
+}
+
+/* --- Höger sida --- */
+#pulseaudio,
+#network,
+#battery,
+#tray,
+#custom-notifications {
+    margin-right: 6px;
+}
+
+#custom-notifications {
+    font-size: 18px;
+    color: @fg_color;
+}
+
+/* Dynamiska färger */
+#battery.warning:not(.charging) { background-color: @yellow; color: @bg_color; }
+#battery.critical:not(.charging) { background-color: @red; color: @bg_color; }
+#network.disconnected { background-color: @red; color: @bg_color; }
+
+/* --- Tooltips --- */
+tooltip {
+    background: alpha(black, 0.8);
+    border: 1px solid @border_color;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @fg_color;
+}
