@@ -28,6 +28,7 @@ PATH=$HOME/.config/emacs/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
 PATH=$HOME/.local/share/bob/nvim-bin:$PATH
 
+alias cl="clear"
 alias cat="bat"
 alias cleanup="sudo pacman Qdtq | sudo pacman -Rns -"
 alias neofetch="fastfetch"
