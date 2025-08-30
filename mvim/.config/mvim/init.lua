@@ -18,6 +18,10 @@ vim.o.smartcase = true
 vim.o.splitright = true
 vim.o.scrolloff = 10
 vim.o.shiftwidth = 4
+vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 --- Packages
 vim.pack.add({
@@ -31,9 +35,11 @@ vim.pack.add({
 	{ src = "https://github.com/Saghen/blink.cmp" },             --- Autocomplete
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
 	{ src = "https://github.com/romgrk/fzy-lua-native" },
-	{ src = "https://github.com/windwp/nvim-autopairs" },
-	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
-	{ src = "https://github.com/nvim-mini/mini.statusline" },
+	{ src = "https://github.com/windwp/nvim-autopairs" },            --- Auto brackets
+	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" }, --- Indent
+	{ src = "https://github.com/nvim-mini/mini.statusline" },        --- statusline
+	{ src = "https://github.com/kevinhwang91/nvim-ufo" },            --- folding
+	{ src = "https://github.com/kevinhwang91/promise-async" },
 })
 
 --- Theme
@@ -59,8 +65,19 @@ require("nvim-autopairs").setup({
 	enable_check_bracket_line = true,
 })
 
---- indent blank line
-require("ibl").setup()
+---indent blank line
+require("ibl").setup({
+	scope = {
+		enabled = true,
+	},
+})
+
+--- UFO folding
+require('ufo').setup({
+	provider_selector = function(bufnr, filetype, buftype)
+		return { 'treesitter', 'indent' }
+	end
+})
 
 --- LSP and autocomplete
 local lspconfig = require("lspconfig")
@@ -137,3 +154,7 @@ vim.keymap.set("n", "<C-k>", "<C-W>k")
 vim.keymap.set("n", "<C-l>", "<C-W>l")
 vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle nvim-tree", silent = true })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+vim.keymap.set('n', '<leader>ua', require('ufo').openAllFolds, { desc = "Open all folds" })
+vim.keymap.set('n', '<leader>uc', require('ufo').closeAllFolds, { desc = "Close all folds" })
+vim.keymap.set('n', '<leader>fo', "<cmd>foldopen<cr>", { desc = "Open fold", silent = true })
+vim.keymap.set('n', '<leader>fc', "<cmd>foldclose<cr>", { desc = "Close fold", silent = true })
