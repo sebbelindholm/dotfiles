@@ -22,6 +22,7 @@ vim.o.foldcolumn = '1' -- '0' is not bad
 vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+vim.o.scrolloff = 10
 
 --- Packages
 vim.pack.add({
@@ -35,23 +36,51 @@ vim.pack.add({
 	{ src = "https://github.com/Saghen/blink.cmp" },             --- Autocomplete
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
 	{ src = "https://github.com/romgrk/fzy-lua-native" },
-	{ src = "https://github.com/windwp/nvim-autopairs" },            --- Auto brackets
-	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" }, --- Indent
-	{ src = "https://github.com/nvim-mini/mini.statusline" },        --- statusline
-	{ src = "https://github.com/kevinhwang91/nvim-ufo" },            --- folding
+	{ src = "https://github.com/windwp/nvim-autopairs" },                   --- Auto brackets
+	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },     --- Indent
+	{ src = "https://github.com/nvim-mini/mini.statusline" },               --- statusline
+	{ src = "https://github.com/kevinhwang91/nvim-ufo" },                   --- folding
 	{ src = "https://github.com/kevinhwang91/promise-async" },
+	{ src = "https://github.com/kylechui/nvim-surround" },                  --- surround
+	{ src = "https://github.com/olimorris/codecompanion.nvim" },            --- AI
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }, --- markdown
+	{ src = "https://github.com/echasnovski/mini.diff" },                   --- git diff
+	{ src = "https://github.com/AbdelrahmanDwedar/awesome-nvim-colorschemes" } --- color themes
 })
 
 --- Theme
-require "vague".setup({ transparent = true })
-vim.cmd("colorscheme vague")
-vim.cmd(":hi statusline guibg=NONE")
+---require "vague".setup({ transparent = true })
+---vim.cmd("colorscheme vague")
+---vim.cmd(":hi statusline guibg=NONE")
+require "catppuccin".setup({
+	flavour = "macchiato",
+	transparent_background = true,
+	integrations = {
+		telescope = true
+	}
+})
+vim.cmd("colorscheme catppuccin")
 
 --- Treesitter
 require "nvim-treesitter.configs".setup({
-	ensure_installed = { "lua", "typescript", "javascript", "vim" },
+	ensure_installed = { "lua", "typescript", "javascript", "vim", "python", "json", "yaml" },
 	highlight = { enable = true }
 })
+
+--- markdown
+require "render-markdown".setup({
+	file_types = { "markdown", "codecompanion" },
+	completions = { lsp = { enabled = true } },
+})
+
+--- git diff
+require "mini.diff".setup({
+	source = require("mini.diff").gen_source.none(),
+})
+
+--- surround
+require("nvim-surround").setup()
 
 --- nvim-tree
 require "nvim-tree".setup()
@@ -65,7 +94,7 @@ require("nvim-autopairs").setup({
 	enable_check_bracket_line = true,
 })
 
----indent blank line
+--- indent-blankline
 require("ibl").setup({
 	scope = {
 		enabled = true,
@@ -93,7 +122,7 @@ blink.setup({
 		documentation = { auto_show = true },
 	},
 	sources = {
-		default = { "lsp", "path", "buffer", "snippets" },
+		default = { "lsp", "path", "buffer", "snippets", "codecompanion" },
 	},
 	snippets = { preset = "default" },
 	fuzzy = { implementation = "lua" },
@@ -108,7 +137,7 @@ vim.diagnostic.config({
 
 local capabilities = blink.get_lsp_capabilities()
 
-local servers = { "lua_ls" }
+local servers = { "lua_ls", "ts_ls", "pyright" }
 
 for _, server in ipairs(servers) do
 	lspconfig[server].setup({
@@ -128,6 +157,35 @@ for _, server in ipairs(servers) do
 	})
 end
 
+--- AI
+require("codecompanion").setup({
+	adapter = "ollama",
+	strategies = {
+		chat = {
+			adapter = "ollama",
+		},
+		inline = {
+			adapter = "ollama",
+		},
+		cmf = {
+			adapter = "ollama",
+		},
+	},
+	ollama = function()
+		return require("codecompanion.adapters").extend("ollama", {
+			schema = {
+				model = {
+					default = "codellama:13b"
+				},
+			},
+		})
+	end,
+
+	chat = {
+		render = "markdown",
+	},
+})
+
 --- Clipboard
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
@@ -139,6 +197,7 @@ vim.keymap.set('n', '<leader>fb', ":FzfLua buffers<CR>")
 vim.keymap.set('n', '<leader>fg', ":FzfLua live_grep_native<CR>")
 vim.keymap.set('n', '<leader>/', ":FzfLua grep_curbuf<CR>")
 vim.keymap.set('n', '<leader>lb', vim.lsp.buf.format)
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>vv", ":vsplit<CR>", { silent = true, desc = "Split vertical" })
 vim.keymap.set("n", "<leader>vs", ":split<CR>", { silent = true, desc = "Split horizontal" })
@@ -158,3 +217,4 @@ vim.keymap.set('n', '<leader>ua', require('ufo').openAllFolds, { desc = "Open al
 vim.keymap.set('n', '<leader>uc', require('ufo').closeAllFolds, { desc = "Close all folds" })
 vim.keymap.set('n', '<leader>fo', "<cmd>foldopen<cr>", { desc = "Open fold", silent = true })
 vim.keymap.set('n', '<leader>fc', "<cmd>foldclose<cr>", { desc = "Close fold", silent = true })
+vim.keymap.set('n', '<leader>cc', "<cmd>CodeCompanionChat toggle<cr>", { desc = "Toggle AI chat window", silent = true })
