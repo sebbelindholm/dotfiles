@@ -27,18 +27,15 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 
 --- Packages
 vim.pack.add({
-	{ src = "https://github.com/vague2k/vague.nvim" },           --- Theme
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" }, --- Treesitter
 	{ src = "https://github.com/neovim/nvim-lspconfig" },        --- lsp-config
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },  --- Icons
 	{ src = "https://github.com/ibhagwan/fzf-lua" },             --- Picker
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },      --- gitsigns
-	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },      --- Tree
 	{ src = "https://github.com/Saghen/blink.cmp" },             --- Autocomplete
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
 	{ src = "https://github.com/romgrk/fzy-lua-native" },
 	{ src = "https://github.com/windwp/nvim-autopairs" },                    --- Auto brackets
-	{ src = "https://github.com/nvim-mini/mini.statusline" },                --- statusline
 	{ src = "https://github.com/kevinhwang91/nvim-ufo" },                    --- folding
 	{ src = "https://github.com/kevinhwang91/promise-async" },
 	{ src = "https://github.com/kylechui/nvim-surround" },                   --- surround
@@ -54,6 +51,7 @@ vim.pack.add({
 	{ src = "https://github.com/OXY2DEV/helpview.nvim" },
 	{ src = "https://github.com/folke/snacks.nvim" },                        --- snacks
 	{ src = "https://github.com/christoomey/vim-tmux-navigator.git" },
+	{ src = "https://github.com/nvim-lualine/lualine.nvim" },                --- statusline
 })
 
 --- snacks
@@ -70,15 +68,15 @@ require("snacks").setup({
 	indent = { enalbed = true },
 	statuscolumn = { enabled = true },
 })
-
 --- theme
 require "catppuccin".setup({
-	flavour = "macchiato",
+	flavour = "mocha",
 	transparent_background = true,
 	integrations = {
 		telescope = true
 	}
 })
+
 vim.cmd("colorscheme catppuccin")
 
 --- Treesitter
@@ -87,14 +85,22 @@ require "nvim-treesitter.configs".setup({
 	highlight = { enable = true }
 })
 
+--- Sessions
+require("auto-session").setup()
+
+--- statusline
+require("lualine").setup({
+	options = {
+		theme = "catppuccin"
+	}
+})
+
 --- toggle term
 require("toggleterm").setup({
 	open_mapping = [[<c-t>]],
 	autochdir = true,
 	direction = "float",
 })
-
-require("auto-session").setup()
 
 function _G.set_terminal_keymaps()
 	local opts = { buffer = 0 }
@@ -125,12 +131,6 @@ require('tiny-inline-diagnostic').setup()
 
 --- surround
 require("nvim-surround").setup()
-
---- nvim-tree
-require "nvim-tree".setup()
-
---- statusline
-require('mini.statusline').setup()
 
 --- typst preview
 require("typst-preview").setup({
