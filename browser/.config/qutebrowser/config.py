@@ -4,9 +4,8 @@ config.load_autoconfig()
 
 catppuccin.setup(c, 'mocha', True)
 
-
-c.editor.command = ["kitty", "-e", "nvim", "{file}"]
-c.qt.args = ["enable-features=WebRTCPipeWireCapturer","ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so"]
+c.editor.command = ["kitty", "-e", "mvim", "{file}"]
+c.qt.args = ["enable-features=WebRTCPipeWireCapturer","ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so", "enable-features=WebContentsForceDark"]
 c.tabs.show = "multiple"
 c.tabs.position = "top"
 c.fonts.default_family = "JetbrainsMono Nerd Font"
@@ -25,5 +24,4 @@ c.url.searchengines = {
 
 c.url.start_pages = [ "https://google.com" ]
 
-c.colors.webpage.darkmode.algorithm = "lightness-cielab"
-c.colors.webpage.darkmode.policy.images = "never"
+c.colors.webpage.preferred_color_scheme = "dark"
