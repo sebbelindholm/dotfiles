@@ -39,7 +39,6 @@ vim.pack.add({
 	{ src = "https://github.com/kevinhwang91/nvim-ufo" },                    --- folding
 	{ src = "https://github.com/kevinhwang91/promise-async" },
 	{ src = "https://github.com/kylechui/nvim-surround" },                   --- surround
-	{ src = "https://github.com/olimorris/codecompanion.nvim" },             --- AI
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }, --- markdown
 	{ src = "https://github.com/echasnovski/mini.diff" },                    --- git diff
@@ -68,6 +67,7 @@ require("snacks").setup({
 	indent = { enalbed = true },
 	statuscolumn = { enabled = true },
 })
+
 --- theme
 require "catppuccin".setup({
 	flavour = "mocha",
@@ -91,8 +91,8 @@ require("auto-session").setup()
 --- statusline
 require("lualine").setup({
 	options = {
-		theme = "catppuccin"
-	}
+		theme = "catppuccin",
+	},
 })
 
 --- toggle term
@@ -164,7 +164,7 @@ blink.setup({
 		documentation = { auto_show = true },
 	},
 	sources = {
-		default = { "lsp", "path", "buffer", "snippets", "codecompanion" },
+		default = { "lsp", "path", "buffer", "snippets" },
 	},
 	snippets = { preset = "default" },
 	fuzzy = { implementation = "lua" },
@@ -181,51 +181,21 @@ local capabilities = blink.get_lsp_capabilities()
 
 local servers = { "lua_ls", "ts_ls", "pyright", "tinymist" }
 
-for _, server in ipairs(servers) do
-	lspconfig[server].setup({
-		capabilities = capabilities,
-		on_attach = function(client, bufnr)
-			-- Autoformat on save
-			if client.server_capabilities.documentFormattingProvider then
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					buffer = bufnr,
-					callback = function()
-						vim.lsp.buf.format({ async = false })
-					end,
-				})
-			end
-			-- Optional: keymaps for navigation, code actions, etc.
-		end,
-	})
-end
+vim.lsp.config("*", { capabilities = capabilities })
 
---- AI
-require("codecompanion").setup({
-	adapter = "ollama",
-	strategies = {
-		chat = {
-			adapter = "ollama",
-		},
-		inline = {
-			adapter = "ollama",
-		},
-		cmf = {
-			adapter = "ollama",
-		},
-	},
-	ollama = function()
-		return require("codecompanion.adapters").extend("ollama", {
-			schema = {
-				model = {
-					default = "codellama:13b"
-				},
-			},
+vim.lsp.enable(servers)
+
+--- Autoformat
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("lsp", { clear = true }),
+	callback = function(args)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = args.buf,
+			callback = function()
+				vim.lsp.buf.format { async = false, id = args.data.client_id }
+			end,
 		})
-	end,
-
-	chat = {
-		render = "markdown",
-	},
+	end
 })
 
 --- Clipboard
@@ -257,7 +227,7 @@ map("n", "<leader>ff", function() snacks.picker.smart() end, { desc = "Find file
 map("n", "<leader>fb", function() snacks.picker.buffers() end, { desc = "Find buffers", silent = true })
 map("n", "<leader>fg", function() snacks.picker.grep() end, { desc = "Grep", silent = true })
 map("n", "<leader>fn", function() snacks.picker.notifications() end, { desc = "Notifications history", silent = true })
-map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+map("n", "<leader>ft", function() snacks.picker.colorschemes() end, { desc = "Colorschemes" })
 map('n', '<leader>ua', require('ufo').openAllFolds, { desc = "Open all folds" })
 map('n', '<leader>uc', require('ufo').closeAllFolds, { desc = "Close all folds" })
 map('n', '<leader>fo', "<cmd>foldopen<cr>", { desc = "Open fold", silent = true })

@@ -34,7 +34,6 @@ alias cleanup="sudo pacman Qdtq | sudo pacman -Rns -"
 alias neofetch="fastfetch"
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 alias yayd="yay -Qq | fzf --multi --preview 'yay -Qi {1}' | xargs -ro yay -Rns"
-alias mvim="NVIM_APPNAME=mvim nvim"
 
 eval "$(fzf --zsh)"
 
