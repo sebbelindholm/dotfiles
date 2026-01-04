@@ -86,7 +86,9 @@ require "nvim-treesitter.configs".setup({
 })
 
 --- Sessions
-require("auto-session").setup()
+require("auto-session").setup({
+	auto_restore = false
+})
 
 --- statusline
 require("lualine").setup({
