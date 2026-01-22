@@ -80,7 +80,7 @@ require "catppuccin".setup({
 vim.cmd("colorscheme catppuccin")
 
 --- Treesitter
-require "nvim-treesitter.configs".setup({
+require "nvim-treesitter.config".setup({
 	ensure_installed = { "lua", "typescript", "javascript", "vim", "python", "json", "yaml", "typst", "vimdoc" },
 	highlight = { enable = true }
 })
