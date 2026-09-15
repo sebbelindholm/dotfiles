@@ -51,6 +51,8 @@ vim.pack.add({
 	{ src = "https://github.com/folke/snacks.nvim" },                        --- snacks
 	{ src = "https://github.com/christoomey/vim-tmux-navigator.git" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },                --- statusline
+	{ src = "https://github.com/uhs-robert/sshfs.nvim" },                --- sshfs
+	{ src = "https://github.com/azratul/live-share.nvim" },                --- live-share
 })
 
 --- snacks
@@ -104,6 +106,11 @@ require("toggleterm").setup({
 	direction = "float",
 })
 
+--- Live_share
+require("live-share").setup({
+      username = "lindholmen",
+})
+
 function _G.set_terminal_keymaps()
 	local opts = { buffer = 0 }
 	vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
@@ -150,6 +157,10 @@ require('ufo').setup({
 	provider_selector = function(bufnr, filetype, buftype)
 		return { 'treesitter', 'indent' }
 	end
+})
+
+require('sshfs').setup({
+
 })
 
 --- LSP and autocomplete

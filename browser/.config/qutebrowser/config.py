@@ -1,8 +1,8 @@
-import catppuccin
+#import catppuccin
 
 config.load_autoconfig()
 
-catppuccin.setup(c, 'mocha', True)
+#catppuccin.setup(c, 'mocha', True)
 
 c.editor.command = ["kitty", "-e", "mvim", "{file}"]
 c.qt.args = ["enable-features=WebRTCPipeWireCapturer","ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so", "enable-features=WebContentsForceDark"]

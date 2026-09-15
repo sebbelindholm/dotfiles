@@ -80,6 +80,10 @@
       "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",
       "src": "https://github.com/folke/snacks.nvim"
     },
+    "sshfs.nvim": {
+      "rev": "57f586251d788dae38fd12998b9a208f7d54c1ef",
+      "src": "https://github.com/uhs-robert/sshfs.nvim"
+    },
     "tiny-inline-diagnostic.nvim": {
       "rev": "ecce93ff7db4461e942c03e0fcc64bd785df4057",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
