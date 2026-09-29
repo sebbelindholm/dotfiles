@@ -36,6 +36,10 @@
       "rev": "06006b471890f19efeb199ffab5da49a2d624619",
       "src": "https://github.com/OXY2DEV/helpview.nvim"
     },
+    "lazygit.nvim": {
+      "rev": "9ffc6103926718f7070fb4017694543cd7dc9718",
+      "src": "https://github.com/kdheepak/lazygit.nvim"
+    },
     "live-share.nvim": {
       "rev": "dae9c34025d070984953df73ed449fffa23d9463",
       "src": "https://github.com/azratul/live-share.nvim"

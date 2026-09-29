@@ -51,9 +51,10 @@ vim.pack.add({
 	{ src = "https://github.com/folke/snacks.nvim" },                        --- snacks
 	{ src = "https://github.com/christoomey/vim-tmux-navigator.git" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },                --- statusline
-	{ src = "https://github.com/uhs-robert/sshfs.nvim" },                --- sshfs
-	{ src = "https://github.com/azratul/live-share.nvim" },                --- live-share
+	{ src = "https://github.com/uhs-robert/sshfs.nvim" },                    --- sshfs
+	{ src = "https://github.com/azratul/live-share.nvim" },                  --- live-share
 	{ src = "https://github.com/saghen/blink.lib" },
+	{ src = "https://github.com/kdheepak/lazygit.nvim" },
 })
 
 --- snacks
@@ -109,8 +110,8 @@ require("toggleterm").setup({
 
 --- Live_share
 require("live-share").setup({
-      username = "lindholmen",
-	  debug = true,
+	username = "lindholmen",
+	debug = true,
 })
 
 function _G.set_terminal_keymaps()
@@ -223,6 +224,7 @@ local snacks = require("snacks")
 
 map('n', '<leader>lb', vim.lsp.buf.format)
 map('n', '<leader>rn', vim.lsp.buf.rename)
+map('n', '<leader>lg', ':LazyGit<CR>', { silent = true, desc = "Open LazyGit" })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map("n", "<leader>vv", ":vsplit<CR>", { silent = true, desc = "Split vertical" })
 map("n", "<leader>vs", ":split<CR>", { silent = true, desc = "Split horizontal" })
