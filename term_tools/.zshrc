@@ -34,6 +34,7 @@ alias cleanup="sudo pacman Qdtq | sudo pacman -Rns -"
 alias neofetch="fastfetch"
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 alias yayd="yay -Qq | fzf --multi --preview 'yay -Qi {1}' | xargs -ro yay -Rns"
+alias liu-connect='sudo openfortivpn remote.edu.liu.se --cookie="$(openfortivpn-webview remote.edu.liu.se)"'
 
 eval "$(fzf --zsh)"
 

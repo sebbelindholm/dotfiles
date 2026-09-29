@@ -53,6 +53,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },                --- statusline
 	{ src = "https://github.com/uhs-robert/sshfs.nvim" },                --- sshfs
 	{ src = "https://github.com/azratul/live-share.nvim" },                --- live-share
+	{ src = "https://github.com/saghen/blink.lib" },
 })
 
 --- snacks
@@ -83,7 +84,7 @@ vim.cmd("colorscheme catppuccin")
 
 --- Treesitter
 require "nvim-treesitter.config".setup({
-	ensure_installed = { "lua", "typescript", "javascript", "vim", "python", "json", "yaml", "typst", "vimdoc" },
+	ensure_installed = { "lua", "typescript", "javascript", "vim", "python", "json", "yaml", "typst", "vimdoc", "ada" },
 	highlight = { enable = true }
 })
 
@@ -109,6 +110,7 @@ require("toggleterm").setup({
 --- Live_share
 require("live-share").setup({
       username = "lindholmen",
+	  debug = true,
 })
 
 function _G.set_terminal_keymaps()
@@ -172,7 +174,6 @@ blink.setup({
 	completion = {
 		accept = {
 			auto_brackets = { enabled = true },
-			auto_quotes = { enabled = true },
 		},
 		documentation = { auto_show = true },
 	},
@@ -192,7 +193,7 @@ vim.diagnostic.config({
 
 local capabilities = blink.get_lsp_capabilities()
 
-local servers = { "lua_ls", "ts_ls", "pyright", "tinymist" }
+local servers = { "lua_ls", "ts_ls", "pyright", "tinymist", "ada_ls" }
 
 vim.lsp.config("*", { capabilities = capabilities })
 
