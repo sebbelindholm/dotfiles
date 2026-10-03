@@ -11,21 +11,24 @@ theme.apply_theme(c)
 # ==========================================
 # Practical Daily Browsing Settings
 # ==========================================
-c.url.start_pages = ["https://start.duckduckgo.com"]
+c.url.start_pages = ["https://google.com"]
 c.url.searchengines = {
-    "DEFAULT": "https://duckduckgo.com/?q={}",
-    "g": "https://www.google.com/search?q={}",
+    "DEFAULT": "https://www.google.com/search?q={}",
+    "dd": "https://duckduckgo.com/?q={}",
     "yt": "https://www.youtube.com/results?search_query={}",
     "gh": "https://github.com/search?q={}",
 }
 
 # Web Engine & Privacy Setup
-c.content.autoplay = False
+c.content.autoplay = True
 c.content.pdfjs = True
-c.content.cookies.accept = "no-unknown-3rdparty"
+#c.content.cookies.accept = "no-unknown-3rdparty"
 c.colors.webpage.preferred_color_scheme = "dark"
 c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.algorithm = "lightness-cielab"
+c.statusbar.show = "in-mode"
+c.tabs.show = "multiple" # change to "switching" if only show briefly
+c.content.javascript.clipboard = "access"
 
 # ==========================================
 # Password Managers (Bitwarden & Google)
@@ -43,7 +46,4 @@ config.bind("J", "back")
 config.bind("K", "forward")
 config.bind("H", "tab-prev")
 config.bind("L", "tab-next")
-
-# Video playback / mpv integration
-config.bind("M", "hint links spawn mpv {hint-url}")
-config.bind("m", "spawn mpv {url}")
+config.bind("aa", "cmd-set-text -s :quickmark-add {url} {title}")
